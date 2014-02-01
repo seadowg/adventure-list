@@ -13,8 +13,8 @@ public class AdventureList extends App {
 
     final List list = new List() {
       @Override
-      public void press(String grocery) {
-        remove(grocery);
+      public void press(String item) {
+        remove(item);
       }
     };
 
