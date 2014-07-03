@@ -1,11 +1,11 @@
-package com.seadowg.loafers.example;
+package com.example;
 
 import com.seadowg.loafers.app.App;
 import com.seadowg.loafers.widget.Button;
 import com.seadowg.loafers.widget.Input;
 import com.seadowg.loafers.widget.List;
 
-public class AdventureList extends App {
+public class MyApp extends App {
   public void open() {
     setTitle("Adventure List");
 

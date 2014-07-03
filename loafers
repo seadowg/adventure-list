@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+echo "Learning to speak robot..."
+wget https://github.com/seadowg/loafers-base/archive/master.zip >/dev/null 2>&1
+unzip master.zip >/dev/null 2>&1
+rm master.zip
+
+echo "Translating your app to robot speak..."
+cp $1 loafers-base-master/src/main/java/com/example >/dev/null 2>&1
+cd loafers-base-master
+mvn clean package >/dev/null 2>&1
+
+echo "Pushing your app onto the phone..."
+mvn android:deploy android:run >/dev/null 2>&1
+
+echo "Sweeping up..."
+mvn clean >/dev/null 2>&1
+cd ..
+rm -rf loafers-base-master
+
+echo "Done!"
